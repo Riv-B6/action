@@ -13,19 +13,19 @@ Créer 3 actions dans Openwhisk
 1. Créations de 3 fichiers > nano nomdufichier
         - `get_value.py` (récupére une valeur numérique en Python)
         - `double_value.js` ( double la valeur en Node.js)
-        - `display_result.py` ( affiche le résultat en format JSON en Python)
+        - `display_result.rb` ( affiche le résultat en format JSON en Python)
 
 2. Création des actions > wsk action create nomdelaction nomduficher
     - wsk action create getvalue get_value.py
     - wsk action create doublevalue double_value.js
-    - wsk action create displayresult display_result.py
+    - wsk action create displayresult display_result.rb
        
 
 3. Création d'une séquence pour combiner les actions
-    - wsk action create --sequence mesactions getvalue doublevalue displayresult
+    - wsk action create --sequence masequence getvalue doublevalue displayresult
 
 4. Appelle de la séquence mesactions
-   - wsk action invoke mesactions --param value 6
+  - wsk action invoke masequence --result --param temperature 25
       
 
 5. Vérifier le résultat 
